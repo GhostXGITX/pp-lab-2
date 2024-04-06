@@ -4,19 +4,33 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Podaj ocenę z matematyki:");
-        double matematyka = scanner.nextDouble();
+        //tablica
+        int[] oceny = new int[10];
+        int iloscOcen = 0;
 
-        System.out.println("Podaj ocenę z fizyki:");
-        double fizyka = scanner.nextDouble();
+        //oceny
+        System.out.println("Podaj oceny");
+        int ocena = scanner.nextInt();
+        while (iloscOcen < oceny.length) {
+            oceny[iloscOcen] = ocena;
+            iloscOcen++;
+            if (iloscOcen < oceny.length) {
+                System.out.println("Podaj kolejną ocenę:");
+                ocena = scanner.nextInt();
+            }
+        }
 
-        System.out.println("Podaj ocenę z chemii:");
-        double chemia = scanner.nextDouble();
+        //średnia ocen
+        double suma = 0;
+        for (int i = 0; i < iloscOcen; i++) {
+            suma += oceny[i];
+        }
+        double srednia = suma / iloscOcen;
 
-        double srednia = (matematyka + fizyka + chemia) / 3;
-
+        //wynik
         System.out.println("Średnia ocen: " + srednia);
 
         scanner.close();
     }
 }
+
