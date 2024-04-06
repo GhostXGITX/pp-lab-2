@@ -20,17 +20,35 @@ public class Main {
             }
         }
 
-        //średnia ocen
+        //wyświetlenie ocen
+        System.out.println("Oceny:");
+        for (int i = 0; i < iloscOcen; i++) {
+            System.out.print(oceny[i] + " ");
+        }
+        System.out.println();
+
+        //suma ocen
+        int sumao = 0;
+        for (int i = 0; i < iloscOcen; i++) {
+            sumao += oceny[i];
+        }
+        System.out.println("Suma ocen: " + sumao);
+        
+
+        //średnia i wynik
         double suma = 0;
         for (int i = 0; i < iloscOcen; i++) {
             suma += oceny[i];
         }
         double srednia = suma / iloscOcen;
-
-        //wynik
         System.out.println("Średnia ocen: " + srednia);
 
+    
+
         scanner.close();
+
+        
+
     }
 }
 
